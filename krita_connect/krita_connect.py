@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import *
-from PyQt5 import Qt
+from PyQt5 import Qt, QtCore
 
 #this is for development autocomplete
 from typing import TYPE_CHECKING
@@ -16,10 +16,18 @@ class krita_connect(DockWidget):
         mainWidget = QWidget(self)
         self.setWidget(mainWidget)
         
-        exampleButton = QPushButton("Connect to ComfyUI",mainWidget)
+        exampleButton = QPushButton("Connect to ComfyUI", mainWidget)
         exampleButton.clicked.connect(self.popup)
+        
+        displayLabel = QLabel("Not Connected", mainWidget)
+        displayLabel.setAlignment(Qt.AlignCenter)
+        
+
+
         mainWidget.setLayout(QVBoxLayout())
         mainWidget.layout().addWidget(exampleButton)
+        mainWidget.layout().addWidget(displayLabel)        
+        mainWidget.layout().setAlignment(QtCore.Qt.AlignTop)
 
         
     def popup(self):
