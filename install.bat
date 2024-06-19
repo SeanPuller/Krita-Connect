@@ -16,4 +16,4 @@ if not exist "%APPDATA%\Krita\Pykrita\krita_connect" mkdir "%APPDATA%\Krita\Pykr
 xcopy /s /y %SOURCE_FOLDER% %DESTINATIONFOLDER%
 copy /y "%SOURCE_FILE%" %DESTINATION%
 
-::cmd /c "C:\Program Files\Krita (x64)\bin\krita.exe"
+cmd /c "C:\Program Files\Krita (x64)\bin\krita.exe"
